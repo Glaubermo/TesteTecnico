@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "TesteTecnico.NetCore.Domain/1.0.0": {
+        "dependencies": {
+          "TesteTecnico.NetCore.DomainCore": "1.0.0"
+        },
+        "runtime": {
+          "TesteTecnico.NetCore.Domain.dll": {}
+        }
+      },
+      "TesteTecnico.NetCore.DomainCore/1.0.0": {
+        "runtime": {
+          "TesteTecnico.NetCore.DomainCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TesteTecnico.NetCore.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TesteTecnico.NetCore.DomainCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

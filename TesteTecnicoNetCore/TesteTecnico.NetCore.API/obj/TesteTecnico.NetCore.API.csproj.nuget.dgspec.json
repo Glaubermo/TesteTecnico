@@ -1,0 +1,299 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.API\\TesteTecnico.NetCore.API.csproj": {}
+  },
+  "projects": {
+    "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.API\\TesteTecnico.NetCore.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.API\\TesteTecnico.NetCore.API.csproj",
+        "projectName": "TesteTecnico.NetCore.API",
+        "projectPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.API\\TesteTecnico.NetCore.API.csproj",
+        "packagesPath": "C:\\Users\\glauber.moschen\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\glauber.moschen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Infra\\TesteTecnico.NetCore.Data.csproj": {
+                "projectPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Infra\\TesteTecnico.NetCore.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.DomainCore\\TesteTecnico.NetCore.DomainCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.DomainCore\\TesteTecnico.NetCore.DomainCore.csproj",
+        "projectName": "TesteTecnico.NetCore.DomainCore",
+        "projectPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.DomainCore\\TesteTecnico.NetCore.DomainCore.csproj",
+        "packagesPath": "C:\\Users\\glauber.moschen\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.DomainCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\glauber.moschen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Domain\\TesteTecnico.NetCore.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Domain\\TesteTecnico.NetCore.Domain.csproj",
+        "projectName": "TesteTecnico.NetCore.Domain",
+        "projectPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Domain\\TesteTecnico.NetCore.Domain.csproj",
+        "packagesPath": "C:\\Users\\glauber.moschen\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\glauber.moschen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.DomainCore\\TesteTecnico.NetCore.DomainCore.csproj": {
+                "projectPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.DomainCore\\TesteTecnico.NetCore.DomainCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Infra\\TesteTecnico.NetCore.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Infra\\TesteTecnico.NetCore.Data.csproj",
+        "projectName": "TesteTecnico.NetCore.Data",
+        "projectPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Infra\\TesteTecnico.NetCore.Data.csproj",
+        "packagesPath": "C:\\Users\\glauber.moschen\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\glauber.moschen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Domain\\TesteTecnico.NetCore.Domain.csproj": {
+                "projectPath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Domain\\TesteTecnico.NetCore.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
