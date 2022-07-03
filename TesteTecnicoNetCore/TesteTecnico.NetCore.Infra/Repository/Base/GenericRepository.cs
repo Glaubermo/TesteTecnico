@@ -37,19 +37,16 @@ namespace TesteTecnico.NetCore.Data.Repository.Base
         public virtual async Task Add(T obj)
         {
             this._context.Set<T>().Add(obj);
-            await SaveAsync();
         }
 
         public virtual async Task Update(T obj)
         {
             this._context.Entry(obj).State = EntityState.Modified;
-            await SaveAsync();
         }
 
         public virtual async Task Delete(T obj)
         {
             this._context.Entry(obj).State = EntityState.Deleted;
-            await SaveAsync();
         }
 
         public virtual async Task DeleteById(TKey id)
@@ -58,10 +55,6 @@ namespace TesteTecnico.NetCore.Data.Repository.Base
             await Delete(obj);
         }
 
-        public virtual async Task<int> SaveAsync()
-        {
-           return await _context.SaveChangesAsync();
-        }
 
         public void Dispose()
         {

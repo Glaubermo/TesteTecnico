@@ -9,30 +9,36 @@ namespace TesteTecnico.NetCore.Domain.Services
     public class HistoricoEscolarDomainService : IHistoricoEscolarDomainService
     {
         private readonly IHistoricoEscolarRepository _repo;
+        private readonly IUnitOfWork _uow;
 
-        public HistoricoEscolarDomainService(IHistoricoEscolarRepository repo)
+        public HistoricoEscolarDomainService(IHistoricoEscolarRepository repo, IUnitOfWork uow)
         {
             _repo = repo;
+            _uow = uow;
         }
 
         public async Task AdicionarHistoricoEscolar(HistoricoEscolar historicoEscolar)
         {
             await _repo.Add(historicoEscolar);
+            await _uow.Commit();
         }
 
         public async Task AlterarHistoricoEscolar(HistoricoEscolar historicoEscolar)
         {
             await _repo.Update(historicoEscolar);
+            await _uow.Commit();
         }
 
         public async Task DeletarHistoricoEscolar(HistoricoEscolar historicoEscolar)
         {
             await _repo.Delete(historicoEscolar);
+            await _uow.Commit();
         }
 
         public async Task DeletarHistoricoPorId(int Id)
         {
             await _repo.DeleteById(Id);
+            await _uow.Commit();
         }
 
         public async Task<IEnumerable<HistoricoEscolar>> ListaTodosHistoricoEscolar()

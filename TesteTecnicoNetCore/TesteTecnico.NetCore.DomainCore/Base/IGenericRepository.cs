@@ -13,6 +13,5 @@ namespace TesteTecnico.NetCore.DomainCore.Base
         Task Update(T obj);
         Task Delete(T obj);
         Task DeleteById(TKey id);
-        Task<int> SaveAsync();
     }
 }

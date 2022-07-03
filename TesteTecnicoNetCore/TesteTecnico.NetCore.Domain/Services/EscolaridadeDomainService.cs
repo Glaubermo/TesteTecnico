@@ -10,31 +10,37 @@ namespace TesteTecnico.NetCore.Domain.Services
     public class EscolaridadeDomainService : IEscolaridadeDomainService
     {
         private readonly IEscolaridadeRepository _repo;
+        private readonly IUnitOfWork _uow;
 
-        public EscolaridadeDomainService(IEscolaridadeRepository repo)
+        public EscolaridadeDomainService(IEscolaridadeRepository repo, IUnitOfWork uow)
         {
             _repo = repo;
+            _uow = uow;
         }
 
 
         public async Task AdicionarEscolaridade(Escolaridade escolaridade)
         {
             await _repo.Add(escolaridade); 
+            await _uow.Commit();
         }
 
         public async Task AlterarEscolaridade(Escolaridade escolaridade)
         {
             await _repo.Update(escolaridade);
+            await _uow.Commit();
         }
 
         public async Task DeletarEscolaridade(Escolaridade escolaridade)
         {
-            await _repo.Delete(escolaridade);   
+            await _repo.Delete(escolaridade);
+            await _uow.Commit();
         }
 
         public async Task DeletarEscolaridadePorId(int Id)
         {
             await _repo.DeleteById(Id);
+            await _uow.Commit();
         }
 
         public async Task<Escolaridade> ListaEscolaridadePorId(int escolaridadeId)

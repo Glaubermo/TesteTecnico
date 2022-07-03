@@ -16,11 +16,16 @@ namespace TesteTecnico.NetCore.API.Configuration
             /* Domain => Repository */
             services.AddScoped<IHistoricoEscolarRepository, HistoricoEscolarRepository>();
             services.AddScoped<IEscolaridadeRepository, EscolaridadeRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 
             /* Domain => Service */
             services.AddScoped<IHistoricoEscolarDomainService, HistoricoEscolarDomainService>();
             services.AddScoped<IEscolaridadeDomainService, EscolaridadeDomainService>();
+            services.AddScoped<IUsuarioDomainService, UsuarioDomainService>();
+
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 

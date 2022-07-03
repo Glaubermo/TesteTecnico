@@ -18,12 +18,13 @@ namespace TesteTecnico.NetCore.Data.Repository
 
         public async Task<Escolaridade> ListaEscolaridadesPorId(int escolaridadeId)
         {
-            return await _context.Escolaridade.FirstOrDefaultAsync(x => x.Id == escolaridadeId);
+            var ok = await _context.Escolaridade.FirstOrDefaultAsync(x => x.Id == escolaridadeId);
+            return ok;
         }
 
         public async Task<IEnumerable<Escolaridade>> ListaTodasEscolaridades()
         {
-            return await _context.Escolaridade.AsNoTracking().ToArrayAsync();
+            return await _context.Escolaridade.AsNoTracking().ToListAsync();
         }
     }
 }
