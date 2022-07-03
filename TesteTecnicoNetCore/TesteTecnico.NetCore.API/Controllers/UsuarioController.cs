@@ -32,10 +32,19 @@ namespace TesteTecnico.NetCore.API.Controllers
             return Ok(usuarios);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult UsuarioComEscolaridade(int id)
+        [HttpGet("Escolaridade/{id}")]
+        public async Task<IActionResult> UsuarioComEscolaridade(int id)
         {
-            var usuarios = _usuarioDomainService.UsuarioComEscolaridade(id);
+            var usuarios = _mapper.Map<UsuarioEscolaridadeDTO>(await _usuarioDomainService.UsuarioComEscolaridade(id));
+            if (usuarios == null) return NotFound();
+
+            return Ok(usuarios);
+        }
+
+        [HttpGet("EscolaridadeHistoricoEscolar/{id}")]
+        public async Task<IActionResult> UsuarioComEscolaridadeEHistoricoEscolar(int id)
+        {
+            var usuarios = _mapper.Map<UsuarioEscolaridadeHistoricoEscolarDTO>(await _usuarioDomainService.UsuarioComEscolaridadeEHistoricoEscolar(id));
             if (usuarios == null) return NotFound();
 
             return Ok(usuarios);

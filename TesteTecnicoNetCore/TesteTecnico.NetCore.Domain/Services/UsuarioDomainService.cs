@@ -60,14 +60,14 @@ namespace TesteTecnico.NetCore.Domain.Services
             return await _repo.ListaUsuarioPorId(usuarioId);
         }
 
-        public Usuario UsuarioComEscolaridade(int usuarioId)
+        public async Task<Usuario> UsuarioComEscolaridade(int usuarioId)
         {
-            return _repo.UsuarioComEscolaridade(usuarioId);
+            return await _repo.UsuarioComEscolaridade(usuarioId);
         }
 
-        public Usuario UsuarioComEscolaridadeEHistoricoEscolar(int usuarioId)
+        public async Task<Usuario> UsuarioComEscolaridadeEHistoricoEscolar(int usuarioId)
         {
-            return  _repo.UsuarioComEscolaridadeEHistoricoEscolar(usuarioId);
+            return await  _repo.UsuarioComEscolaridadeEHistoricoEscolar(usuarioId);
         }
 
         public async Task<IEnumerable<Usuario>> UsuariosComEscolaridade(int escolaridadeId)

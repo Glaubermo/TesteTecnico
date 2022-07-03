@@ -26,13 +26,16 @@ namespace TesteTecnico.NetCore.Data.Repository
             return await _context.Usuario.AsNoTracking().ToArrayAsync();
         }
 
-        public Usuario UsuarioComEscolaridade(int usuarioId)
+        public async Task<Usuario> UsuarioComEscolaridade(int usuarioId)
         {
-            return _context.Usuario
+            var query = await _context.Usuario
                 .Include(e => e.Ecolaridade)
                 .AsNoTracking()
                 .Where(x => x.Id == usuarioId)
-                .FirstOrDefault();
+                .OrderBy(o => o.Nome)
+                .FirstOrDefaultAsync();
+
+            return query;
         }
 
 
@@ -52,7 +55,6 @@ namespace TesteTecnico.NetCore.Data.Repository
                 .Include(h => h.HistoricoEscolar)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id == usuarioId);
-
         }
 
 
@@ -75,24 +77,16 @@ namespace TesteTecnico.NetCore.Data.Repository
         //    return (Usuario)query;
         //}
 
-        public Usuario UsuarioComEscolaridadeEHistoricoEscolar(int usuarioId)
+        public async Task<Usuario> UsuarioComEscolaridadeEHistoricoEscolar(int usuarioId)
         {
-            var query = _context.Usuario
+            var query = await _context.Usuario
                 .Where(x => x.Id == usuarioId)
                 .Include(x => x.Ecolaridade)
                 .Include(x => x.HistoricoEscolar)
-                .Select(s => new
-                {
-                    s.Id,
-                    s.Nome,
-                    s.SobreNome,
-                    s.Email,
-                    s.DataNascimento,
-                    Escolaridade = s.Ecolaridade.Descricao,
-                    HistoricoEscolar = s.HistoricoEscolar.Nome + "." + s.HistoricoEscolar.Formato
-                });
+                .OrderBy(o => o.Nome)
+                .FirstOrDefaultAsync(); 
 
-            return (Usuario)query;
+            return query;
         }
     }
 }

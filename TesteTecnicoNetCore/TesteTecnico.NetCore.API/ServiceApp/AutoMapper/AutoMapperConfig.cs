@@ -12,6 +12,8 @@ namespace TesteTecnico.NetCore.API.ServiceApp.AutoMapper
             CreateMap<Escolaridade, EscolaridadeDTO>().ReverseMap();
             CreateMap<HistoricoEscolar, HistoricoEscolarDTO>().ReverseMap();
             CreateMap<Usuario, UsuarioDTO>().ReverseMap();
+            CreateMap<Usuario, UsuarioEscolaridadeDTO>().ReverseMap();
+            CreateMap<Usuario, UsuarioEscolaridadeHistoricoEscolarDTO>().ReverseMap();
         }
     }
 }

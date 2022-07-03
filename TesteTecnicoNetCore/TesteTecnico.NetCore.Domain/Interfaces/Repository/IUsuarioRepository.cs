@@ -9,9 +9,9 @@ namespace TesteTecnico.NetCore.Domain.Interfaces.Repository
     {
         Task<Usuario> ListaUsuarioPorId(int usuarioId);
         Task<IEnumerable<Usuario>> ListaTodosUsuario();
-        Usuario UsuarioComEscolaridade(int usuarioId);
+        Task<Usuario> UsuarioComEscolaridade(int usuarioId);
         Task<IEnumerable<Usuario>> UsuariosComEscolaridade(int escolaridadeId);
         Task<Usuario> HistoricoEscolarDoUsuario(int usuarioId);
-        Usuario UsuarioComEscolaridadeEHistoricoEscolar(int usuarioId);
+        Task<Usuario> UsuarioComEscolaridadeEHistoricoEscolar(int usuarioId);
     }
 }
