@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using TesteTecnico.NetCore.API.ServiceApp.DTO;
 using TesteTecnico.NetCore.Domain.Entities;
 using TesteTecnico.NetCore.Domain.Interfaces.Services;
+using TesteTecnico.NetCore.Domain.Services.Infra;
 
 namespace TesteTecnico.NetCore.API.Controllers
 {
@@ -13,12 +14,14 @@ namespace TesteTecnico.NetCore.API.Controllers
     public class HistoricoEscolarController : ControllerBase
     {
         private readonly IHistoricoEscolarDomainService _historicoEscolarDomainService;
+        private readonly IHistoricoEscolarPDF _historicoEscolarPDF;
         private readonly IMapper _mapper;
 
-        public HistoricoEscolarController(IHistoricoEscolarDomainService historicoEscolarDomainService, IMapper mapper)
+        public HistoricoEscolarController(IHistoricoEscolarDomainService historicoEscolarDomainService, IMapper mapper, IHistoricoEscolarPDF historicoEscolarPDF)
         {
             _historicoEscolarDomainService = historicoEscolarDomainService;
             _mapper = mapper;
+            _historicoEscolarPDF = historicoEscolarPDF;
         }
 
 
@@ -41,24 +44,24 @@ namespace TesteTecnico.NetCore.API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] HistoricoEscolarDTO historicoEscolarDTO)
+        public async Task<IActionResult> Post([FromBody] TesteTecnico.NetCore.Domain.DTO.HistoricoEscolarDTO historicoEscolarDTO)
         {
             if (historicoEscolarDTO == null) return BadRequest();
 
-            await _historicoEscolarDomainService.AdicionarHistoricoEscolar(_mapper.Map<HistoricoEscolar>(historicoEscolarDTO));
+            await _historicoEscolarPDF.Salvar(historicoEscolarDTO);
 
             return Ok();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Put([FromBody] HistoricoEscolarDTO historicoEscolarDTO)
-        {
-            if (historicoEscolarDTO == null) return BadRequest();
+        //[HttpPut]
+        //public async Task<IActionResult> Put([FromBody] HistoricoEscolarDTO historicoEscolarDTO)
+        //{
+        //    if (historicoEscolarDTO == null) return BadRequest();
 
-            await _historicoEscolarDomainService.AlterarHistoricoEscolar(_mapper.Map<HistoricoEscolar>(historicoEscolarDTO));
+        //    await _historicoEscolarDomainService.AlterarHistoricoEscolar(_mapper.Map<HistoricoEscolar>(historicoEscolarDTO));
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)

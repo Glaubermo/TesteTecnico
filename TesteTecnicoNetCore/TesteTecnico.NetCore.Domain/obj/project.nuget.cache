@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "HwQ/8tW7D80j3bqimM0k+yYjAwHYMeQl8mf4JRFf1sedoIseWhHeQYM6ZyFDAV+PxGFEn1fkUj5BizskSB6t2w==",
+  "dgSpecHash": "7gzXdDRxwPTPEXSZ5+iyXMAYiK7N/c1os1TNbXddfdM3nVCiB8TxFVOfe59M7Xha5RJOBopFHJVXuDfScmn2Eg==",
   "success": true,
   "projectFilePath": "D:\\Estudos\\Projetos\\TesteTecnico\\TesteTecnicoNetCore\\TesteTecnico.NetCore.Domain\\TesteTecnico.NetCore.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\pdfsharpcore\\1.3.32\\pdfsharpcore.1.3.32.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta17\\sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
+    "C:\\Users\\glauber.moschen\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

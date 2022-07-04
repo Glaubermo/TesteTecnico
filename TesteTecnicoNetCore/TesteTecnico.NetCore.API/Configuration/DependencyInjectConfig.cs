@@ -4,6 +4,7 @@ using TesteTecnico.NetCore.Data.Repository;
 using TesteTecnico.NetCore.Domain.Interfaces.Repository;
 using TesteTecnico.NetCore.Domain.Interfaces.Services;
 using TesteTecnico.NetCore.Domain.Services;
+using TesteTecnico.NetCore.Domain.Services.Infra;
 
 namespace TesteTecnico.NetCore.API.Configuration
 {
@@ -23,6 +24,10 @@ namespace TesteTecnico.NetCore.API.Configuration
             services.AddScoped<IHistoricoEscolarDomainService, HistoricoEscolarDomainService>();
             services.AddScoped<IEscolaridadeDomainService, EscolaridadeDomainService>();
             services.AddScoped<IUsuarioDomainService, UsuarioDomainService>();
+            services.AddScoped<IHistoricoEscolarPDF, HistoricoEscolarPDF>();
+
+
+            services.AddScoped<IArquivo, Arquivo>();
 
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();

@@ -50,7 +50,7 @@ namespace TesteTecnico.NetCore.Data.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("varchar(55")
+                        .HasColumnType("varchar(55)")
                         .HasColumnName("Nome");
 
                     b.HasKey("Id");

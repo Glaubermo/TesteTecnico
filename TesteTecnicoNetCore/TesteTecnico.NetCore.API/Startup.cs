@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
@@ -38,7 +40,9 @@ namespace TesteTecnico.NetCore.API
 
             services.AddDbContextConfig(Configuration); // In DbContextConfig
             services.AddDependencyInjectConfig(Configuration); // In DependencyInjectConfig
-           
+
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

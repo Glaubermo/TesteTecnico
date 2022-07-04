@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TesteTecnico.NetCore.API.ServiceApp.DTO;
+using TesteTecnico.NetCore.API.ServiceApp.Validation;
 using TesteTecnico.NetCore.Domain.Entities;
 using TesteTecnico.NetCore.Domain.Interfaces.Services;
 
@@ -55,6 +56,15 @@ namespace TesteTecnico.NetCore.API.Controllers
         public async Task<IActionResult> Post([FromBody] UsuarioDTO usuarioDTO)
         {
             if (usuarioDTO == null) return BadRequest();
+
+            var validator = new UsuarioValidation();
+
+            var results = validator.Validate(usuarioDTO);
+
+            if (results.IsValid == false)
+            {
+                return BadRequest(new { Error = results.Errors});
+            }
 
             await _usuarioDomainService.AdicionarUsuario(_mapper.Map<Usuario>(usuarioDTO));
 

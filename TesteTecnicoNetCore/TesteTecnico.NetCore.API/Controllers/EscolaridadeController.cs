@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TesteTecnico.NetCore.API.ServiceApp.DTO;
+using TesteTecnico.NetCore.API.ServiceApp.Validation;
 using TesteTecnico.NetCore.Domain.Entities;
 using TesteTecnico.NetCore.Domain.Interfaces.Services;
 
@@ -26,7 +27,7 @@ namespace TesteTecnico.NetCore.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetId(int id)
         {
-            var escolaridade = _mapper.Map<EscolaridadeDTO>(await _escolaridadeDomainService.ListaEscolaridadePorId(id));
+            var escolaridade = await _escolaridadeDomainService.ListaEscolaridadePorId(id);
             if (escolaridade == null) return NotFound();
             return Ok(escolaridade);
         }
@@ -34,7 +35,7 @@ namespace TesteTecnico.NetCore.API.Controllers
         [HttpGet()]
         public async Task<IActionResult> Get()
         {
-            var escolaridade = _mapper.Map<IEnumerable<EscolaridadeDTO>>(await _escolaridadeDomainService.ListaTodasEscolaridades());
+            var escolaridade = await _escolaridadeDomainService.ListaTodasEscolaridades();
             if (escolaridade == null) return NotFound();          
 
             return Ok(escolaridade);
@@ -44,9 +45,20 @@ namespace TesteTecnico.NetCore.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] EscolaridadeDTO escolaridadeDTO)
         {
-            if (escolaridadeDTO == null) return BadRequest();
-           
-            await _escolaridadeDomainService.AdicionarEscolaridade(_mapper.Map<Escolaridade>(escolaridadeDTO)); 
+            if (escolaridadeDTO == null) return BadRequest();            
+
+            var tipoEscolaridade = _mapper.Map<Escolaridade>(escolaridadeDTO);
+
+            var validator = new EscolaridadeValidation();
+
+            var results = validator.Validate(escolaridadeDTO);
+
+            if (results.IsValid == false)
+            {
+                return BadRequest(new { Error = results.Errors });
+            }
+
+            await _escolaridadeDomainService.AdicionarEscolaridade(tipoEscolaridade); 
 
             return Ok();
         }
@@ -56,7 +68,16 @@ namespace TesteTecnico.NetCore.API.Controllers
         {
             if (escolaridadeDTO == null) return BadRequest();
 
-            await _escolaridadeDomainService.AlterarEscolaridade(_mapper.Map<Escolaridade>(escolaridadeDTO));
+            var tipoEscolaridade = _mapper.Map<Escolaridade>(escolaridadeDTO);
+
+            var validator = new EscolaridadeValidation();
+
+            var results = validator.Validate(escolaridadeDTO);
+
+            if (results.IsValid == false)
+            {
+                await _escolaridadeDomainService.AlterarEscolaridade(tipoEscolaridade);
+            }
 
             return Ok();
         }
